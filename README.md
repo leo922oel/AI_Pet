@@ -3,10 +3,12 @@ ML team19 final project : AI pet
 
 
 # **Dataset**
-    <https://commonvoice.mozilla.org/zh-CN/datasets>
+    [Common Voice](https://commonvoice.mozilla.org/zh-CN/datasets)
 
-    <http://personal.ee.surrey.ac.uk/Personal/P.Jackson/SAVEE/Download.html>
-    <https://mega.nz/folder/KBp32apT#gLIgyWf9iQ-yqnWFUFuUHg>
+    [Surrey Audio-Visual Expressed Emotion (SAVEE)](http://personal.ee.surrey.ac.uk/Personal/P.Jackson/SAVEE/Download.html)
+
+    [MEGA EmoV-DB](https://mega.nz/folder/KBp32apT#gLIgyWf9iQ-yqnWFUFuUHg)
+        ps. the original format is .wav, they should change to .mp3 to use.
 
 
 # **Voice Model**

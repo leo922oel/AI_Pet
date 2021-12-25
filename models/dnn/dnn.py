@@ -3,7 +3,7 @@ from typing import Optional
 from abc import ABC, abstractmethod
 import numpy as np
 from keras.models import Sequential, model_from_json
-from .base import BaseModel
+from ..base import BaseModel
 # from utils import curve
 
 class DNN(BaseModel, ABC):
@@ -41,3 +41,13 @@ class DNN(BaseModel, ABC):
         
         print('Accuracy: %.3f, Loss: %.3f' % (acc, loss))
         self.trained=True
+    
+    def predict(self, samples : np.ndarray) -> np.ndarray:
+        if not self.trained: raise RuntimeError('Trained model unexist.')
+
+        samples = self.reshape_input(samples)
+        return np.argmax(self.model.predict(samples), axis=1)
+    
+    @abstractmethod
+    def reshape_input(self):
+        pass

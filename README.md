@@ -14,4 +14,7 @@ ML team19 final project : AI pet
 # **Voice Model**
 - <https://github.com/Renovamen/Speech-Emotion-Recognition>
 
+# **Output .Gif file**
+- <https://www.jianshu.com/p/bd99496598e1>
+
 

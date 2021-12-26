@@ -16,5 +16,7 @@ ML team19 final project : AI pet
 
 # **Output .Gif file**
 先把gif切成很多張PNG:https://www.cleverpdf.com/zh-tw/gif-to-png
+
 再把多張PNG拼成gif:https://paste.ofcode.org/8FDwbCPWGG7n23xR32mm8g
+
 (fps愈大，每張PNG間隔愈短)

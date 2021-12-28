@@ -17,8 +17,15 @@ ML team19 final project : AI pet
 # **Output .Gif file**
 - <https://www.jianshu.com/p/bd99496598e1>
 - <https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/367149/>
+<<<<<<< HEAD
 - 先把gif切成很多張PNG : 
     https://www.cleverpdf.com/zh-tw/gif-to-png
+=======
+
+另種方法:
+
+先把gif切成很多張PNG:https://www.cleverpdf.com/zh-tw/gif-to-png
+>>>>>>> 0aa1ac879b6c794cf228c475ff0049d597b3492f
 
     再把多張PNG拼成gif : https://paste.ofcode.org/8FDwbCPWGG7n23xR32mm8g
     

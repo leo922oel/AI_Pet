@@ -35,3 +35,7 @@ ML team19 final project : AI pet
     Fearful
     Disgust
     Surprised
+
+# **New model**
+#### quick use
+    ./python train.py

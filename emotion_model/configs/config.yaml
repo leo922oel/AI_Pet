@@ -1,0 +1,16 @@
+model: cnn1d
+
+# database
+data_path: "D:\\LeoData\\11010\\machine_learning\\ML_final_project\\AudioEmotion\\Actor_*\\*.wav"
+emotion_labels: {
+  '01': 'neutral',
+  '02': 'calm',
+  '03': 'happy',
+  '04': 'sad',
+  '05': 'angry',
+  '06': 'fearful',
+  '07': 'disgust',
+  '08': 'surprised'
+}
+
+observed_emotions: ['calm', 'happy', 'fearful', 'disgust']

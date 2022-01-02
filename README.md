@@ -5,7 +5,7 @@ ML team19 final project : AI pet
 #### Structure
 ```
 ├── models/                
-│   ├── common.py          // base of all model
+│   ├── base.py          // base of all model
 │   ├── dnn                // nn model
 │   │   ├── dnn.py         // base of nn
 │   │   ├── cnn.py         // CNN
@@ -16,7 +16,8 @@ ML team19 final project : AI pet
 │   └── librosa.py         // extract features by librosa
 ├── utils/
 │   └── config.py          // call parameters by config
-├── features               // save the setting feature file
+├── features/              // save the setting feature file
+├── checkpoint/            // save the check point of trained model
 ├── train.py               // train model
 ├── predict.py             // prediction
 └── preprocess.py          // preprocess the original datak
@@ -37,7 +38,9 @@ Use training data to build the model. The name of files follows the format :
 python train.py
 ```
 #### quick test
-Currently, The model is sklearn framework "MLPclassifier"
+- Currently, The model is the building cnn.
+- The path way of the test file can modify in the predict.py : audio_path = "{file path}" 
+- each time predicts a data only.
 ```python
 python predict.py
 ```

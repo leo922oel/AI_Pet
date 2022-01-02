@@ -3,12 +3,21 @@ import yaml
 
 class Config:
     def __init__(self, *args, **kwargs):#, params: dict={}):
-        # for key, val in params.items():
-            # if key != 'params' and isinstance(val, dict):
-                # self.__dict__[key] = Config(val)
-            # else:
-                # self.__dict__[key] = val
+        # model
         self.model = kwargs.get('model', 'cnn1d')
+
+        # training params
+        self.epochs = 10
+        self.batch_size = 32
+        self.learning_rate = 0.01
+
+        # model params
+        self.n_kernels = 32
+        self.kernel_sizes = [5, 5]
+        self.dropout = 0.5
+        self.hidden_sizes = 32
+
+        # emotion
         self.emotion_labels = {
             '01': 'neutral',
             '02': 'calm',
@@ -20,6 +29,8 @@ class Config:
             '08': 'surprised'
         }
         self.observed_emotions = ['calm', 'happy', 'fearful', 'disgust']
+
+        # path 
         self.data_path =  "D:\\LeoData\\11010\\machine_learning\\ML_final_project\\AudioEmotion\\Actor_*\\*.wav"
         self.feature_path = kwargs.get('feature_path', "D:\\LeoData\\11010\\machine_learning\\ML_final_project\\emotion_model\\features")
         self.train_feature_path = kwargs.get('train_feature_path', 'D:\\LeoData\\11010\\machine_learning\\ML_final_project\\emotion_model\\features\\train_feat.p')

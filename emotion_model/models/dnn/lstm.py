@@ -1,7 +1,8 @@
 from keras.layers import LSTM as KERAS_LSTM
 from keras.layers import Dense, Dropout
 from keras.models import Sequential
-from keras.optimizers import Adam
+# from keras.optimizers import Adam
+from tensorflow.keras.optimizers import Adam
 import numpy as np
 from .dnn import DNN
 

@@ -21,7 +21,6 @@ class BaseModel(ABC):
     def predict(self, samples : np.ndarray) -> np.ndarray:
         pass
 
-    @abstractmethod
     def predict_proba(self, samples : np.ndarray) -> np.ndarray:
         if not self.trained:
             raise RuntimeError('Trianed model unexist.')
@@ -44,8 +43,6 @@ class BaseModel(ABC):
     def make(cls):
         pass
 
-    @classmethod
-    @abstractmethod
     def evaluate(self, x_test : np.ndarray, y_test : np.ndarray) -> float:
         predictions = self.predict(x_test)
         accuracy = accuracy_score(y_pred=predictions, y_true=y_test)

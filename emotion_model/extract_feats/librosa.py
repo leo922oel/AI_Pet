@@ -46,7 +46,7 @@ def load_feature(config, feature_path, train : bool):
     if train:
         Y = list(features['emotion'])
 
-        return train_test_split(np.array(X), Y, test_size=.25, random_state=40)
+        return train_test_split(np.array(X), np.array(Y), test_size=.25, random_state=40)
     else:
         return np.array(X)
 

@@ -28,18 +28,25 @@ class DNN(BaseModel, ABC):
         model = model_from_json(load_model)
 
         model_path = os.path.abspath(os.path.join(path, name + '.h5'))
-        model.load_weight(model_path)
+        model.load_weights(model_path)
 
         return cls(model, True)
     
-    def train(self, x_train : np.ndarray, y_train : np.adarray, batch_size : int=10, n_epochs : int=10) -> None:
-        x_train = self.reshape_input(x_train)
-        history = self.model.fit(x_train, y_train, batch_size=batch_size, epochs=n_epochs, shuffle=True, )
+    def train(self, x_train : np.ndarray, y_train, x_val : Optional[np.ndarray] = None, y_val = None, batch_size : int=10, n_epochs : int=10) -> None:
+        if x_val is None or y_val is None:
+            x_val, y_val = x_train, y_train
 
-        acc = history.history['acc']
-        loss = history.history['loss']
+        x_train, x_val = self.reshape_input(x_train), self.reshape_input(x_val)
+        history = self.model.fit(x_train, y_train, batch_size=batch_size, epochs=n_epochs, shuffle=True, validation_data=(x_val, y_val))
+
+        # acc = history.history['accuracy']
+        # loss = history.history['loss']
+
+        # val_acc = history.history['val_accuracy']
+        # val_loss = history.history['val_loss']
         
-        print('Accuracy: %.3f, Loss: %.3f' % (acc, loss))
+        # print('Accuracy: %.3f, Loss: %.3f' % (acc, loss))
+        # print('Val Accuracy: %.3f, Val Loss: %.3f' % (val_acc, val_loss))
         self.trained=True
     
     def predict(self, samples : np.ndarray) -> np.ndarray:

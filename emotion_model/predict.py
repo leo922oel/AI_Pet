@@ -9,13 +9,15 @@ def predict(config, audio_path, model):
     # y_pred = model.predict(feature)
     # print(y_pred)
     result = model.predict(feature)
+
     # result_prob = model.predict_proba(feature)
     print('Recogntion: ', config.observed_emotions[int(result)])
     # print('Probability: ', result_prob)
     # utils.radar(result_prob, config.class_labels)
+    return result
     
 if __name__ == '__main__':
-    audio_path = 'D:\\LeoData\\11010\\machine_learning\\ML_final_project\\AudioEmotion\\Actor_01\\*.wav'
+    audio_path = 'D:\\LeoData\\11010\\machine_learning\\ML_final_project\\AudioEmotion\\Actor_01\\03-01-07-01-02-02-01.wav'
 
     config = parse_config()
     model = models.load(config)

@@ -21,6 +21,11 @@ class Config:
         }
         self.observed_emotions = ['calm', 'happy', 'fearful', 'disgust']
         self.data_path =  "D:\\LeoData\\11010\\machine_learning\\ML_final_project\\AudioEmotion\\Actor_*\\*.wav"
+        self.feature_path = kwargs.get('feature_path', "D:\\LeoData\\11010\\machine_learning\\ML_final_project\\emotion_model\\features")
+        self.train_feature_path = kwargs.get('train_feature_path', 'D:\\LeoData\\11010\\machine_learning\\ML_final_project\\emotion_model\\features\\train_feat.p')
+        self.predict_feature_path = kwargs.get('predict_feature_path', 'D:\\LeoData\\11010\\machine_learning\\ML_final_project\\emotion_model\\features\\test_feat.p')
+        self.checkpoint_path = kwargs.get('checkpoint_path', 'checkpoint/')
+        self.checkpoint_name = kwargs.get('checkpoint_name', 'model_checkpoint')
 
 def load_config(file_path : str):
     file = open(file_path, 'r', encoding='utf-8')

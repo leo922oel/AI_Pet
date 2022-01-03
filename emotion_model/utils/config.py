@@ -19,16 +19,16 @@ class Config:
 
         # emotion
         self.emotion_labels = {
-            '01': 'neutral',
-            '02': 'calm',
-            '03': 'happy',
-            '04': 'sad',
-            '05': 'angry',
-            '06': 'fearful',
-            '07': 'disgust',
-            '08': 'surprised'
+            '01': 'Neutral',
+            '02': 'Calm',
+            '03': 'Happy',
+            '04': 'Sad',
+            '05': 'Angry',
+            '06': 'Fearful',
+            '07': 'Disgust',
+            '08': 'Surprised'
         }
-        self.observed_emotions = ['neutral', 'calm', 'happy', 'sad', 'angry', 'fearful', 'disgust', 'surprised']
+        self.observed_emotions = ['Neutral', 'Calm', 'Happy', 'Sad', 'Angry', 'Fearful', 'Disgust', 'Surprised']
 
         # path 
         self.data_path =  "training_dataset/Actor_*/*.wav"

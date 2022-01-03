@@ -9,6 +9,7 @@ if __name__ == '__main__':
     config = parse_config()
     model = models.load(config)
     emo = predict(config, audio, model)
+    print(emo)
     prev_mood = 'Neutral'
     curr_gif = 0
 

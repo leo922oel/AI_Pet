@@ -2,7 +2,7 @@ from keras.layers import Dense, Dropout, Flatten, Conv1D, Activation,\
     BatchNormalization, MaxPooling1D
 from keras.models import Sequential
 # from keras.optimizers import Adam
-from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.optimizers import Adam, SGD
 import numpy as np
 from .dnn import DNN
 
@@ -20,20 +20,37 @@ class CNN1D(DNN):
              n_classes : int=3,
              learning_rate : float=0.01):
         model = Sequential()
-        for size in kernel_sizes:
-            model.add(Conv1D(filters=n_kernels, kernel_size=size, padding='same', input_shape=(input_shape, 1)))
-            model.add(BatchNormalization(axis=-1))
-            model.add(Activation('relu'))
-            model.add(Dropout(dropout))
+        # for size in kernel_sizes:
+            # model.add(Conv1D(filters=n_kernels, kernel_size=size, padding='same', input_shape=(input_shape, 1)))
+            # model.add(BatchNormalization(axis=-1))
+            # model.add(Activation('relu'))
+            # model.add(Dropout(dropout))
         
-        model.add(Flatten())
-        model.add(Dense(hidden_size))
-        model.add(BatchNormalization(axis=-1))
+        # model.add(Flatten())
+        # model.add(Dense(hidden_size))
+        # model.add(BatchNormalization(axis=-1))
+        # model.add(Activation('relu'))
+        # model.add(Dropout(dropout))
+
+        model.add(Conv1D(128, kernel_size=5, padding='same', input_shape=(input_shape, 1)))
         model.add(Activation('relu'))
-        model.add(Dropout(dropout))
+        model.add(Conv1D(128, kernel_size=5, padding='same',))
+        model.add(Activation('relu'))
+        model.add(Dropout(0.1))
+        model.add(MaxPooling1D(8))
+        model.add(Conv1D(128, kernel_size=5, padding='same',))
+        model.add(Activation('relu'))
+        model.add(Conv1D(128, kernel_size=5, padding='same',))
+        model.add(Activation('relu'))
+        model.add(Conv1D(128, kernel_size=5, padding='same',))
+        model.add(Activation('relu'))
+        model.add(Dropout(0.2))
+        model.add(Conv1D(128, kernel_size=5, padding='same',))
+        model.add(Activation('relu'))
+        model.add(Flatten())
 
         model.add(Dense(n_classes, activation='softmax'))
-        optimizer = Adam(learning_rate=learning_rate)
+        optimizer = SGD(learning_rate=learning_rate)
         model.compile(loss='sparse_categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
 
         return cls(model)

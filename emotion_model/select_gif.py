@@ -14,11 +14,11 @@ emotions = {
 def select_gif(curr_mood, curr_gif):
     # dictionary stores index of each gif with its corresponding weight
     gif_indices = range(40)
-    weights = {i : 1/40 for i in gif_indices}
+    weights = { i : 1/40 for i in gif_indices }
 
     # update weights: 1.5 * 情緒晉級程度
     """
-    weights[curr_gif] *= (emotions[predict(config, audio_path, model)] - emotions[curr]) * 1.5
+    weights[curr_gif] *= (emotions[predict(config, audio_path, model)] - emotions[curr_mood]) * 1.5
     """
 
     # return max

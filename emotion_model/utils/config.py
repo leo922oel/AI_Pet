@@ -7,7 +7,7 @@ class Config:
         self.model = kwargs.get('model', 'cnn1d')
 
         # training params
-        self.epochs = 200
+        self.epochs = 3000
         self.batch_size = 32
         self.learning_rate = 0.001
 
@@ -36,7 +36,7 @@ class Config:
         self.train_feature_path = kwargs.get('train_feature_path', 'features/train_feat.p')
         self.predict_feature_path = kwargs.get('predict_feature_path', 'features/test_feat.p')
         self.checkpoint_path = kwargs.get('checkpoint_path', 'checkpoint/')
-        self.checkpoint_name = kwargs.get('checkpoint_name', 'model_checkpoint')
+        self.checkpoint_name = kwargs.get('checkpoint_name', 'best_model_checkpoint')
 
 def load_config(file_path : str):
     file = open(file_path, 'r', encoding='utf-8')

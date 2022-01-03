@@ -7,7 +7,7 @@ import numpy as np
 
 def play_audio(file_path: str) -> None:
     """
-    play audio
+    # play audio
     """
     import pyaudio
     p = pyaudio.PyAudio()

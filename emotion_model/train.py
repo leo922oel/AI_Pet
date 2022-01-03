@@ -25,7 +25,7 @@ def train(config):
     else:
         model.train(x_train, y_train)
     
-    model.evaluate(x_test, y_test)
+    # model.evaluate(x_test, y_test)
     model.save(config.checkpoint_path, config.checkpoint_name)
 
 if __name__ == '__main__':

@@ -7,15 +7,15 @@ class Config:
         self.model = kwargs.get('model', 'cnn1d')
 
         # training params
-        self.epochs = 10
+        self.epochs = 200
         self.batch_size = 32
-        self.learning_rate = 0.01
+        self.learning_rate = 0.001
 
         # model params
-        self.n_kernels = 32
-        self.kernel_sizes = [5, 5]
+        self.n_kernels = 48
+        self.kernel_sizes = [5, 5, 5, 5, 5, 5]
         self.dropout = 0.5
-        self.hidden_sizes = 32
+        self.hidden_sizes = 256
 
         # emotion
         self.emotion_labels = {
@@ -28,10 +28,10 @@ class Config:
             '07': 'disgust',
             '08': 'surprised'
         }
-        self.observed_emotions = ['calm', 'happy', 'fearful', 'disgust']
+        self.observed_emotions = ['neutral', 'calm', 'happy', 'sad', 'angry', 'fearful', 'disgust', 'surprised']
 
         # path 
-        self.data_path =  "D:\\LeoData\\11010\\machine_learning\\ML_final_project\\AudioEmotion\\Actor_*\\*.wav"
+        self.data_path =  "D:\\LeoData\\11010\\machine_learning\\ML_final_project\\emotion_model\\training_dataset\\Actor_*\\*.wav"
         self.feature_path = kwargs.get('feature_path', "D:\\LeoData\\11010\\machine_learning\\ML_final_project\\emotion_model\\features")
         self.train_feature_path = kwargs.get('train_feature_path', 'D:\\LeoData\\11010\\machine_learning\\ML_final_project\\emotion_model\\features\\train_feat.p')
         self.predict_feature_path = kwargs.get('predict_feature_path', 'D:\\LeoData\\11010\\machine_learning\\ML_final_project\\emotion_model\\features\\test_feat.p')

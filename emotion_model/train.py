@@ -14,27 +14,6 @@ def train(config):
     # model = MLPClassifier(alpha=1e-2, batch_size=256, epsilon=1e-8, hidden_layer_sizes=(300,), learning_rate='adaptive', max_iter=500)
     # model.fit(x_train, y_train)
 
-    # y_pred = model.predict(x_test)
-    # acc = accuracy_score(y_test, y_pred)
-    # print("acc: ", {acc})
-    # print(y_pred)
-    a = np.zeros(len(y_train))
-    b = np.zeros(len(y_test))
-    for i, data in enumerate(y_train):
-        if data == 'calm': a[i] = 0
-        elif data == 'happy': a[i] = 1
-        elif data == 'fearful': a[i] = 2
-        else: a[i] = 3
-
-    for i, data in enumerate(y_test):
-        if data == 'calm': b[i] = 0
-        elif data == 'happy': b[i] = 1
-        elif data == 'fearful': b[i] = 2
-        else: b[i] = 3
-
-    y_train = a
-    y_test = b
-
     model = models.make(config=config, n_feats=x_train.shape[1])
 
     print('----- start training', config.model, '-----')

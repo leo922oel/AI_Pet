@@ -46,7 +46,7 @@ def load_feature(config, feature_path, train : bool):
     if train:
         Y = list(features['emotion'])
 
-        return train_test_split(np.array(X), np.array(Y), test_size=.25, random_state=40)
+        return train_test_split(np.array(X), np.array(Y), test_size=.1, random_state=40)
     else:
         return np.array(X)
 
@@ -57,11 +57,12 @@ def get_data(config, data_path, feature_path, train : bool):
         # for file in files:
         for file in glob.glob(config.data_path):
             file_name = os.path.basename(file)
-            label = config.emotion_labels[file_name.split("-")[2]]
-            if label not in config.observed_emotions:
-                continue
+            # label = config.emotion_labels[file_name.split("-")[2]]
+            label = file_name.split("-")[2]
+            # if label not in config.observed_emotions:
+                # continue
             feature = features(file)
-            data.append([file, feature, label])
+            data.append([file, feature, int(label)-1])
     else:
         for file in glob.glob(config.data_path):
             feature = features(file)

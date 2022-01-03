@@ -5,7 +5,7 @@ ML team19 final project : AI pet
 #### Structure
 ```
 ├── models/                
-│   ├── base.py          // base of all model
+│   ├── base.py            // base of all model
 │   ├── dnn                // nn model
 │   │   ├── dnn.py         // base of nn
 │   │   ├── cnn.py         // CNN
@@ -21,6 +21,7 @@ ML team19 final project : AI pet
 ├── train.py               // train model
 ├── predict.py             // prediction
 └── preprocess.py          // preprocess the original datak
+└── training_dataset/      //  trianing data
 ```
 
 #### Preprocess

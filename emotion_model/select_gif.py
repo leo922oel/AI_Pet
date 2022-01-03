@@ -17,8 +17,6 @@ weights = { i : 1/40 for i in gif_indices }
 
 def select_gif(prev_mood, curr_mood, curr_gif):
     # update weights: 1.5 * 情緒晉級程度
-    """
     weights[curr_gif] *= (emotions[curr_mood] - emotions[prev_mood]) * 1.5
-    """
     # return max
     return max(weights, key=weights.get)

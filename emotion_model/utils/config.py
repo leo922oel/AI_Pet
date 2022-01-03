@@ -31,10 +31,10 @@ class Config:
         self.observed_emotions = ['neutral', 'calm', 'happy', 'sad', 'angry', 'fearful', 'disgust', 'surprised']
 
         # path 
-        self.data_path =  "D:\\LeoData\\11010\\machine_learning\\ML_final_project\\emotion_model\\training_dataset\\Actor_*\\*.wav"
-        self.feature_path = kwargs.get('feature_path', "D:\\LeoData\\11010\\machine_learning\\ML_final_project\\emotion_model\\features")
-        self.train_feature_path = kwargs.get('train_feature_path', 'D:\\LeoData\\11010\\machine_learning\\ML_final_project\\emotion_model\\features\\train_feat.p')
-        self.predict_feature_path = kwargs.get('predict_feature_path', 'D:\\LeoData\\11010\\machine_learning\\ML_final_project\\emotion_model\\features\\test_feat.p')
+        self.data_path =  "training_dataset/Actor_*/*.wav"
+        self.feature_path = kwargs.get('feature_path', "features")
+        self.train_feature_path = kwargs.get('train_feature_path', 'features/train_feat.p')
+        self.predict_feature_path = kwargs.get('predict_feature_path', 'features/test_feat.p')
         self.checkpoint_path = kwargs.get('checkpoint_path', 'checkpoint/')
         self.checkpoint_name = kwargs.get('checkpoint_name', 'model_checkpoint')
 

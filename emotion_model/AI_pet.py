@@ -14,3 +14,5 @@ if __name__ == '__main__':
     curr_gif = 0
 
     print("GIF code: ", sgif.select_gif(emo, prev_mood, curr_gif))
+    print('oo')
+    

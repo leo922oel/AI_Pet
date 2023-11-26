@@ -1,5 +1,5 @@
-# ML_final_project
-ML team19 final project : AI pet
+# AI Pet
+> A Constant Personalized Companion
 
 # **Emotion model**
 #### Structure
